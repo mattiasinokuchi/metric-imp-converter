@@ -21,9 +21,9 @@
 		"mongodb": "^3.6.3",
 		"zombie": "^6.1.4"
 	},
-  "devDependencies": {
+	"devDependencies": {
 		"nodemon": "^2.0.6"
-	}
+	},
 	"engines": {
 		"node": "4.4.3"
 	},
