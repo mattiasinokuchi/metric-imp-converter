@@ -9,10 +9,9 @@
 function ConvertHandler() {
 
   this.getNum = function(input) {
-    var result;
     let firstLetter = input.match(/[a-z]/);
-    let index = input.indexOf(firstLetter);
-    return firstLetter+index;
+    let number = input.split(firstLetter)[0];
+    return number;
   };
 
   this.getUnit = function(input) {
