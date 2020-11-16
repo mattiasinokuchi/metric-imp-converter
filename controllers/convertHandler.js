@@ -11,8 +11,13 @@ function ConvertHandler() {
   this.getNum = function(input) {
     let firstLetter = input.match(/[a-z]/);
     let index = input.indexOf(firstLetter);
-    let number = input.slice(0, index);
-    return number;
+    let value = input.slice(0, index);
+    console.log(typeof number);
+    function parseFraction(val){
+      return Function('"use strict";return (' + val + ')')();
+    }
+    console.log(parseFraction(value));
+    return parseFraction(value);
   };
 
   this.getUnit = function(input) {
@@ -57,8 +62,28 @@ function ConvertHandler() {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
-    var result;
-
+    let result;
+    switch (initUnit) {
+      case 'gal':
+        result = initNum*galToL;
+        break;
+      case 'L':
+        result = initNum/galToL;
+        break;
+      case 'lbs':
+        result = initNum*lbsToKg;
+        break;
+      case 'kg':
+        result = initNum/lbsToKg;
+        break;
+      case 'mi':
+        result = initNum*miToKm;
+        break;
+      case 'km':
+        result = initNum/miToKm;
+        break;
+    }
+    console.log(typeof result, result);
     return result;
   };
 
