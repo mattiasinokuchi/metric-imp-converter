@@ -10,7 +10,7 @@ function ConvertHandler() {
 
   this.getNum = function(input) {
     var result;
-    let firstLetter = input.match(/[a-z]/g);
+    let firstLetter = input.match(/[a-z]/);
     let index = input.indexOf(firstLetter);
     return firstLetter+index;
   };
