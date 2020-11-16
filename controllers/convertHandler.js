@@ -11,13 +11,11 @@ function ConvertHandler() {
   this.getNum = function(input) {
     let firstLetter = input.match(/[a-z]/);
     let index = input.indexOf(firstLetter);
-    let value = input.slice(0, index);
-    console.log(typeof number);
-    function parseFraction(val){
-      return Function('"use strict";return (' + val + ')')();
+    let numbers = input.slice(0, index);
+    function parseFraction(num){
+      return Function('"use strict";return (' + num + ')')();
     }
-    console.log(parseFraction(value));
-    return parseFraction(value);
+    return parseFraction(numbers);
   };
 
   this.getUnit = function(input) {
