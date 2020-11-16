@@ -12,7 +12,7 @@ function ConvertHandler() {
     let firstLetter = input.match(/[a-z]/);
     let index = input.indexOf(firstLetter);
     let numbers = input.slice(0, index);
-    function parseFraction(num){
+    function parseFraction(num) {
       return Function('"use strict";return (' + num + ')')();
     }
     return parseFraction(numbers);
@@ -86,9 +86,8 @@ function ConvertHandler() {
   };
 
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result;
-
-    return result;
+    let string = initNum + ' ' + initUnit + ' converts to ' + returnNum + ' ' + returnUnit;
+    return string;
   };
 
 }
