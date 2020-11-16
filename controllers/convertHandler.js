@@ -10,14 +10,16 @@ function ConvertHandler() {
 
   this.getNum = function(input) {
     let firstLetter = input.match(/[a-z]/);
-    let number = input.split(firstLetter)[0];
+    let index = input.indexOf(firstLetter);
+    let number = input.slice(0, index);
     return number;
   };
 
   this.getUnit = function(input) {
-    var result;
-
-    return result;
+    let firstLetter = input.match(/[a-z]/);
+    let index = input.indexOf(firstLetter);
+    let unit = input.slice(index);
+    return unit;
   };
 
   this.getReturnUnit = function(initUnit) {
