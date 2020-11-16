@@ -10,10 +10,9 @@ function ConvertHandler() {
 
   this.getNum = function(input) {
     var result;
-    /*let firstDigit = 'Testi2ng4'.match(/\d/) // will give you the first digit in the string
-    indexed = 'Test2ing4'.indexOf(firstDigit)
-    result = parseFloat(input);*/
-    return result;
+    let firstLetter = input.match(/[a-z]/g);
+    let index = input.indexOf(firstLetter);
+    return firstLetter+index;
   };
 
   this.getUnit = function(input) {
