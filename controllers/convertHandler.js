@@ -29,31 +29,50 @@ function ConvertHandler() {
     let returnUnit;
     switch (initUnit) {
       case 'gal':
-        returnUnit = 'L';
+        returnUnit = 'liters';
         break;
       case 'L':
-        returnUnit = 'gal';
+        returnUnit = 'gallons';
         break;
       case 'lbs':
-        returnUnit = 'kg';
+        returnUnit = 'kilograms';
         break;
       case 'kg':
-        returnUnit = 'lbs';
+        returnUnit = 'pounds';
         break;
       case 'mi':
-        returnUnit = 'km';
+        returnUnit = 'kilometers';
         break;
       case 'km':
-        returnUnit = 'mi';
+        returnUnit = 'miles';
         break;
     }
     return returnUnit;
   };
 
-  this.spellOutUnit = function(unit) {
-    var result;
-
-    return result;
+  this.spellUnit = function(initUnit) {
+    let spellOutUnit;
+    switch (initUnit) {
+      case 'L':
+        spellOutUnit = 'liters';
+        break;
+      case 'gal':
+        spellOutUnit = 'gallons';
+        break;
+      case 'kg':
+        spellOutUnit = 'kilograms';
+        break;
+      case 'lbs':
+        spellOutUnit = 'pounds';
+        break;
+      case 'km':
+        spellOutUnit = 'kilometers';
+        break;
+      case 'mi':
+        spellOutUnit = 'miles';
+        break;
+    }
+    return spellOutUnit;
   };
 
   this.convert = function(initNum, initUnit) {
@@ -81,12 +100,11 @@ function ConvertHandler() {
         result = initNum/miToKm;
         break;
     }
-    console.log(typeof result, result);
     return result;
   };
 
-  this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    let string = initNum + ' ' + initUnit + ' converts to ' + returnNum + ' ' + returnUnit;
+  this.getString = function(initNum, spelledUnit, returnNum, returnUnit) {
+    let string = initNum + ' ' + spelledUnit + ' converts to ' + returnNum + ' ' + returnUnit;
     return string;
   };
 
