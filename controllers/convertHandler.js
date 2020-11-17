@@ -29,50 +29,50 @@ function ConvertHandler() {
     let returnUnit;
     switch (initUnit) {
       case 'gal':
-        returnUnit = 'liters';
+        returnUnit = 'l';
         break;
       case 'L':
-        returnUnit = 'gallons';
+        returnUnit = 'gal';
         break;
       case 'lbs':
-        returnUnit = 'kilograms';
+        returnUnit = 'kg';
         break;
       case 'kg':
-        returnUnit = 'pounds';
+        returnUnit = 'lbs';
         break;
       case 'mi':
-        returnUnit = 'kilometers';
+        returnUnit = 'km';
         break;
       case 'km':
-        returnUnit = 'miles';
+        returnUnit = 'mi';
         break;
     }
     return returnUnit;
   };
 
-  this.spellUnit = function(initUnit) {
-    let spellOutUnit;
-    switch (initUnit) {
-      case 'L':
-        spellOutUnit = 'liters';
+  this.spellUnit = function(unit) {
+    let spelledOutUnit;
+    switch (unit) {
+      case 'l':
+        spelledOutUnit = 'liters';
         break;
       case 'gal':
-        spellOutUnit = 'gallons';
+        spelledOutUnit = 'gallons';
         break;
       case 'kg':
-        spellOutUnit = 'kilograms';
+        spelledOutUnit = 'kilograms';
         break;
       case 'lbs':
-        spellOutUnit = 'pounds';
+        spelledOutUnit = 'pounds';
         break;
       case 'km':
-        spellOutUnit = 'kilometers';
+        spelledOutUnit = 'kilometers';
         break;
       case 'mi':
-        spellOutUnit = 'miles';
+        spelledOutUnit = 'miles';
         break;
     }
-    return spellOutUnit;
+    return spelledOutUnit;
   };
 
   this.convert = function(initNum, initUnit) {
@@ -103,8 +103,8 @@ function ConvertHandler() {
     return Math.round(result*100000)/100000;
   };
 
-  this.getString = function(initNum, spelledUnit, returnNum, returnUnit) {
-    let string = initNum + ' ' + spelledUnit + ' converts to ' + returnNum + ' ' + returnUnit;
+  this.getString = function(initNum, spelledInitUnit, returnNum, spelledReturnUnit) {
+    let string = initNum + ' ' + spelledInitUnit + ' converts to ' + returnNum + ' ' + spelledReturnUnit;
     return string;
   };
 

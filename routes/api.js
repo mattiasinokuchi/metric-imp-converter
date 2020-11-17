@@ -17,14 +17,22 @@ module.exports = function (app) {
 
   app.route('/api/convert')
     .get(function (req, res){
-      var input = req.query.input;
-      var initNum = convertHandler.getNum(input);
-      var initUnit = convertHandler.getUnit(input);
-      let spelledUnit = convertHandler.spellUnit(initUnit);
-      var returnNum = convertHandler.convert(initNum, initUnit);
-      var returnUnit = convertHandler.getReturnUnit(initUnit);
-      var toString = convertHandler.getString(initNum, spelledUnit, returnNum, returnUnit);
-      console.log(input, initNum, initUnit, returnNum, returnUnit, toString);
+      let input = req.query.input;
+      console.log('input: ', input);
+      let initNum = convertHandler.getNum(input);
+      console.log('initNum: ', initNum);
+      let initUnit = convertHandler.getUnit(input);
+      console.log('initUnit: ', initUnit);
+      let returnNum = convertHandler.convert(initNum, initUnit);
+      console.log('returnNum: ', returnNum);
+      let returnUnit = convertHandler.getReturnUnit(initUnit);
+      console.log('returnUnit: ', returnUnit);
+      let spelledInitUnit = convertHandler.spellUnit(initUnit);
+      console.log('spelledInitUnit: ', spelledInitUnit);
+      let spelledReturnUnit = convertHandler.spellUnit(returnUnit);
+      console.log('spelledReturnUnit: ', spelledReturnUnit);
+      let toString = convertHandler.getString(initNum, spelledInitUnit, returnNum, spelledReturnUnit);
+      console.log('toString: ', toString);
       res.json({
         "initNum": initNum,
         "initUnit": initUnit,
