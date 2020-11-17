@@ -106,7 +106,7 @@ function ConvertHandler() {
   this.getString = function(initNum, spelledInitUnit, returnNum, spelledReturnUnit) {
     let string = initNum + ' ' + spelledInitUnit + ' converts to ' + returnNum + ' ' + spelledReturnUnit;
     return string;
-  };
+  }
 
 }
 
