@@ -11,7 +11,12 @@ function ConvertHandler() {
   this.getNum = function(input) {
     let firstLetter = input.match(/[a-z]/);
     let index = input.indexOf(firstLetter);
-    let numbers = input.slice(0, index);
+    let numbers;
+    if(index === 0) {
+      numbers = 1;
+    } else {
+      numbers = input.slice(0, index);
+    }
     function parseFraction(num) {
       return Function('"use strict";return (' + num + ')')();
     }
