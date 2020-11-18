@@ -41,8 +41,9 @@ suite('Unit Tests', function(){
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      
-      //done();
+      let input = '32/2/2L';
+      assert.equal(convertHandler.getNum(input),8);
+      done();
     });
     
     test('No Numerical Input', function(done) {
