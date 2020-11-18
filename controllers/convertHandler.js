@@ -26,8 +26,14 @@ function ConvertHandler() {
   this.getUnit = function(input) {
     let firstLetter = input.match(/[a-z]/);
     let index = input.indexOf(firstLetter);
-    let unit = input.slice(index);
-    return unit;
+    let unit;
+    if(index === 0) {
+      unit = input;
+    } else {
+      unit = input.slice(index);
+    }
+    console.log(unit.toLowerCase());
+    return unit.toLowerCase();
   };
 
   this.getReturnUnit = function(initUnit) {
