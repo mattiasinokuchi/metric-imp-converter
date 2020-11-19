@@ -12,23 +12,26 @@ function ConvertHandler() {
     // find the first letter of any case
     let firstLetter = input.match(/[a-z]/i);
     let index = input.indexOf(firstLetter);
+    // extract numericals
     let numInput;
     if(index === 0) {
-      numInput = 1;
+      return 1;
     } else {
       numInput = input.slice(0, index);
     }
-    // check for double fraction in input
+    // invalidate double fraction in input
     let fractionFound = numInput.match(/\//g);
     if (fractionFound) {
 	    if(fractionFound.length>1) {
         return "invalid number";
       }
     }
+    // return number
+    return parseFraction(numInput);
+    // convert fraction to number
     function parseFraction(num) {
       return Function('"use strict";return (' + num + ')')();
     }
-    return parseFraction(numInput);
   };
 
   this.getUnit = function(input) {

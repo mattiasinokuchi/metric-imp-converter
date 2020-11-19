@@ -33,6 +33,8 @@ module.exports = function (app) {
     let toString = convertHandler.getString(initNum, spelledInitUnit, returnNum, spelledReturnUnit);
     if(!returnUnit) {
       res.send("invalid unit");
+    } else if(initNum == "invalid number") {
+      res.send("invalid number");
     } else {
       res.json({
         "initNum": initNum,
