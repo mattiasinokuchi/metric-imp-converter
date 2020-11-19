@@ -12,17 +12,23 @@ function ConvertHandler() {
     // find the first letter of any case
     let firstLetter = input.match(/[a-z]/i);
     let index = input.indexOf(firstLetter);
-    console.log('index: ', index);
-    let numbers;
+    let numInput;
     if(index === 0) {
-      numbers = 1;
+      numInput = 1;
     } else {
-      numbers = input.slice(0, index);
+      numInput = input.slice(0, index);
+    }
+    // check for double fraction in input
+    let fractionFound = numInput.match(/\//g);
+    if (fractionFound) {
+	    if(fractionFound.length>1) {
+        return "invalid number";
+      }
     }
     function parseFraction(num) {
       return Function('"use strict";return (' + num + ')')();
     }
-    return parseFraction(numbers);
+    return parseFraction(numInput);
   };
 
   this.getUnit = function(input) {
@@ -35,7 +41,6 @@ function ConvertHandler() {
     } else {
       unit = input.slice(index);
     }
-    console.log(unit.toLowerCase());
     return unit.toLowerCase();
   };
 
