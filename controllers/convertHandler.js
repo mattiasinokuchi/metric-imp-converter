@@ -9,8 +9,10 @@
 function ConvertHandler() {
 
   this.getNum = function(input) {
-    let firstLetter = input.match(/[a-z]/);
+    // find the first letter of any case
+    let firstLetter = input.match(/[a-z]/i);
     let index = input.indexOf(firstLetter);
+    console.log('index: ', index);
     let numbers;
     if(index === 0) {
       numbers = 1;
@@ -24,7 +26,8 @@ function ConvertHandler() {
   };
 
   this.getUnit = function(input) {
-    let firstLetter = input.match(/[a-z]/);
+    // find the first letter of any case
+    let firstLetter = input.match(/[a-z]/i);
     let index = input.indexOf(firstLetter);
     let unit;
     if(index === 0) {
