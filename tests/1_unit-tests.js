@@ -65,8 +65,11 @@ suite('Unit Tests', function(){
     });
     
     test('Unknown Unit Input', function(done) {
-      
-      //done();
+      let input = ['gall','ll','mii','kmm','lbss','kgg','GALL','LL','MII','KMM','LBSS','KGG'];
+      input.forEach(function(ele, i) {
+        assert.equal(convertHandler.getReturnUnit(ele),undefined);
+      });
+      done();
     });  
     
   });
@@ -88,7 +91,7 @@ suite('Unit Tests', function(){
     
     test('For Each Valid Unit Inputs', function(done) {
       //see above example for hint
-      done();
+      //done();
     });
     
   });
