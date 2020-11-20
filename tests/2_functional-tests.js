@@ -6,7 +6,7 @@
 *       (if additional are added, keep them at the very end!)
 */
 
-/*var chaiHttp = require('chai-http');
+var chaiHttp = require('chai-http');
 var chai = require('chai');
 var assert = chai.assert;
 var server = require('../server');
@@ -39,7 +39,7 @@ suite('Functional Tests', function() {
         .query({input: '32g'})
         .end(function(err, res){
           assert.equal(res.status, 200);
-          assert.equal(res.body, "invalid unit");
+          assert.equal(res.text, "invalid unit");
           done();
         });
       });
@@ -64,4 +64,3 @@ suite('Functional Tests', function() {
   });
 
 });
-*/
