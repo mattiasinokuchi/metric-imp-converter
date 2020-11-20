@@ -39,6 +39,7 @@ suite('Functional Tests', function() {
         .query({input: '32g'})
         .end(function(err, res){
           assert.equal(res.status, 200);
+          console.log('res.text: ', res.text);
           assert.equal(res.text, "invalid unit");
           done();
         });
@@ -56,8 +57,14 @@ suite('Functional Tests', function() {
       });  
       
       test('Convert 3/7.2/4kilomegagram (invalid number and unit)', function(done) {
-        
-        //done();
+        chai.request(server)
+        .get('/api/convert')
+        .query({input: '3/7.2/4kilomegagram'})
+        .end(function(err, res){
+          assert.equal(res.status, 200);
+          assert.equal(res.text, "invalid number and unit");
+          done();
+        });
       });
       
       test('Convert kg (no number)', function(done) {

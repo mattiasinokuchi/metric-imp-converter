@@ -31,9 +31,11 @@ module.exports = function (app) {
     let spelledReturnUnit = convertHandler.spellUnit(returnUnit);
     console.log('spelledReturnUnit: ', spelledReturnUnit);
     let toString = convertHandler.getString(initNum, spelledInitUnit, returnNum, spelledReturnUnit);
-    if(!returnUnit) {
+    if(!returnUnit && !initNum) {
+      res.send("invalid number and unit");
+    } else if(!returnUnit) {
       res.send("invalid unit");
-    } else if(initNum == "invalid number") {
+    } else if(!initNum) {
       res.send("invalid number");
     } else {
       res.json({

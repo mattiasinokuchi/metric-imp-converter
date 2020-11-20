@@ -23,7 +23,7 @@ function ConvertHandler() {
     let fractionFound = numInput.match(/\//g);
     if (fractionFound) {
 	    if(fractionFound.length>1) {
-        return "invalid number";
+        return;
       }
     }
     // return number
@@ -121,6 +121,8 @@ function ConvertHandler() {
       case 'km':
         result = initNum/miToKm;
         break;
+      default:
+        return
     }
     return Math.round(result*100000)/100000;
   };
