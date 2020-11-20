@@ -131,8 +131,10 @@ suite('Unit Tests', function(){
     });
     
     test('Lbs to Kg', function(done) {
-      
-      //done();
+      let input = [5, 'lbs'];
+      let expected = 2.2680;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1);
+      done();
     });
     
     test('Kg to Lbs', function(done) {
