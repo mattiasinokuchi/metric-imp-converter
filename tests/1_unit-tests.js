@@ -90,10 +90,14 @@ suite('Unit Tests', function(){
   suite('Function convertHandler.spellOutUnit(unit)', function() {
     
     test('For Each Valid Unit Inputs', function(done) {
-      //see above example for hint
-      //done();
+      let input = ['gal','l','mi','km','lbs','kg'];
+      let expect = ['gallons','liters','kilometers','miles','kilograms','pounds'];
+      input.forEach(function(ele, i) {
+        assert.equal(convertHandler.getReturnUnit(ele), expect[i]);
+      });
+      done();
     });
-    
+
   });
   
   suite('Function convertHandler.convert(num, unit)', function() {
