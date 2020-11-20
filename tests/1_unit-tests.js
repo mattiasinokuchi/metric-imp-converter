@@ -91,9 +91,9 @@ suite('Unit Tests', function(){
     
     test('For Each Valid Unit Inputs', function(done) {
       let input = ['gal','l','mi','km','lbs','kg'];
-      let expect = ['gallons','liters','kilometers','miles','kilograms','pounds'];
+      let expect = ['gallons','liters','miles','kilometers','pounds','kilograms'];
       input.forEach(function(ele, i) {
-        assert.equal(convertHandler.getReturnUnit(ele), expect[i]);
+        assert.equal(convertHandler.spellUnit(ele), expect[i]);
       });
       done();
     });
